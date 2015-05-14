@@ -5,7 +5,15 @@
 //  Created by MJ on 15/4/23.
 //  Copyright (c) 2015年 TJ. All rights reserved.
 //
+//主屏宽
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+//主屏高
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #import <UIKit/UIKit.h>
 typedef void(^CompleteHandlerBlock) (NSInteger selectIndex,NSString *selectTitle);
 /**
