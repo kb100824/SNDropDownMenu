@@ -11,3 +11,5 @@
     
     #2：类方法移除view和按钮
     [SNDropDownMenu removeView];
+#3演示图
+![Image](https://github.com/KBvsMJ/SNDropDownMenu/blob/master/demogif/1.gif)
