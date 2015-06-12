@@ -15,7 +15,7 @@
 @implementation SNDropDownMenu
 {
     CGFloat totalHeight;
-   
+    
 }
 + (SNDropDownMenu *)shareInstance
 {
@@ -27,7 +27,7 @@
         
     });
     return dropDownInstance;
-
+    
 }
 - (instancetype)init
 {
@@ -45,12 +45,12 @@
 
 - (void)showInView:(UIView *)baseView andButtonTitle:(NSArray *)titleArray completeHandlerBlock:(CompleteHandlerBlock)completeHandler;
 {
-  
+    
     myCompleteHandler = completeHandler;
-     [baseView addSubview:self];
+    [baseView addSubview:self];
     [self createSubViews:titleArray];
     [UIView animateWithDuration:1.0f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-       
+        
         
         CGRect frect = self.frame;
         frect.size.height = totalHeight;
@@ -59,9 +59,9 @@
         
     } completion:^(BOOL finished) {
         
-      
+        
     }];
-  
+    
 }
 - (void)buttonAction:(UIButton *)sender
 {
@@ -85,10 +85,10 @@
         frect.size.width = width;
         frect.size.height = kItemHeight;
         
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         //[btn setBackgroundColor:UIColorFromRGB(0xe8f4ff)];
         [btn setBackgroundImage:[UIImage imageNamed:@"localCity-05"] forState:UIControlStateNormal];
-       // btn.contentMode = UIViewContentModeScaleAspectFit;
+        // btn.contentMode = UIViewContentModeScaleAspectFit;
         [btn setFrame:frect];
         [btn setTitle:[NSString stringWithFormat:@"%@",titleArray[i]] forState:UIControlStateNormal];
         [btn setTitleColor:UIColorFromRGB(0x333333) forState:UIControlStateNormal];
@@ -107,12 +107,12 @@
 - (void)dismissView
 {
     [UIView animateWithDuration:1.0f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-      [self removeFromSuperview];
+        [self removeFromSuperview];
     } completion:^(BOOL finished) {
         
-    
+        
     }];
-
+    
 }
 + (void)showInView:(UIView *)baseView andButtonTitle:(NSArray *)titleArray completeHandlerBlock:(CompleteHandlerBlock)completeHandler
 {
